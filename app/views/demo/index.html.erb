@@ -1,0 +1,15 @@
+<div id="content">
+	    	  	 <p>
+    	  	 <li>r = RSRuby.instance</p>
+		  	 <li>d = r.rnorm(100)</p>
+		  	 <li>l = r.range(-1,1,@d)</p>
+		  	 <li>r.png "/tmp/plot.png"</p>
+		     <li>r.par(:bg => "cornsilk")</p>
+		  	 <li>r.hist(d, :range => @l, :col => "lavender", :main => "My Plot")</p>
+		  	 </p>
+    <div class="row row-centered">
+    	<h5>Ruby and R</h5>
+		<%=image_tag(url_for controller:"demo", action:"show_image") %>
+	</div>
+</div>
+
