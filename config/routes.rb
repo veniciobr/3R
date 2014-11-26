@@ -1,20 +1,20 @@
 Rnarrails::Application.routes.draw do
 
+  devise_for :users
   get "home/index"
   get "demo/index"
+  get "users/login"
 
   #get "home/demo", to: 'demo#show_image'
-
   #match '/:controller/:action', :via => [:get, :post]
 
   root 'home#index' 
 
-
-resources :demo do
-    collection do
-      get :show_image
-    end
-end
+  resources :demo do
+      collection do
+        get :show_image
+      end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
