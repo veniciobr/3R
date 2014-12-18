@@ -9,6 +9,7 @@ gem 'twitter-bootstrap-rails'
 gem 'rsruby'
 gem 'devise'
 gem 'simple_form'
+gem 'jquery-datatables-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.5'

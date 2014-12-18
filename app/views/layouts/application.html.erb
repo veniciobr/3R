@@ -36,51 +36,51 @@
 </head>
   <!-- ======== @Region: body ======== -->
 <body class="page page-index">
-    <!-- ======== @Region: #navigation ======== -->
-    <div id="navigation" class="wrapper">
-    	<div class="navbar-static-top">
-        
-	        <!--Hidden Header Region-->
 
-	        
-	        <!--Header upper region-->
-	        <div class="header-upper">
-	          	<div class="header-upper-inner container">
-		            <div class="row">
-		              	<div class="col-xs-8 col-xs-push-4">
-			                
-			                <!--Show/hide trigger for #hidden-header -->
-			    
-			                
-			                <!--social media icons-->
-			                <div class="social-media">
-			                  <!--@todo: replace with company social media details-->
-			                  <a href="#"> <i class="fa fa-twitter-square"></i> </a>
-			                  <a href="#"> <i class="fa fa-facebook-square"></i> </a>
-			                  <a href="#"> <i class="fa fa-linkedin-square"></i> </a>
-			                  <a href="#"> <i class="fa fa-google-plus-square"></i> </a>
-			                </div>
-		              	</div>
-		              	<div class="col-xs-4 col-xs-pull-8">
-		                
-			                <!--user menu-->
-			                <div class="btn-group user-menu">
+  <!-- ======== @Region: #navigation ======== -->
+  <div id="navigation" class="wrapper">
+   	<div class="navbar-static-top">
+	     <!--Header upper region-->
+	     <div class="header-upper">
+	       <div class="header-upper-inner container">
+		        <div class="row">
+		          <div class="col-xs-8 col-xs-push-4">
+			       
+               <!--social media icons 
+                <div class="social-media">
+                  <!--@todo: replace with company social media details
+                  <a href="#"> <i class="fa fa-twitter-square"></i> </a>
+                  <a href="#"> <i class="fa fa-facebook-square"></i> </a>
+                  <a href="#"> <i class="fa fa-linkedin-square"></i> </a>
+                  <a href="#"> <i class="fa fa-google-plus-square"></i> </a>
+                </div>
+              -->
 
-                        <% if user_signed_in? %>
-                          <!--<a href="#login-modal" class="btn btn-link logout" data-toggle="modal"></a> -->
-                          <%= link_to('Logout', destroy_user_session_path, :method => 'delete', class:'btn btn-link logout') %>
+            	</div>
+              <div class="col-xs-4 col-xs-pull-8">
+                  <!--user menu-->
+                  <div class="btn-group user-menu">
+                    <% if user_signed_in? %>
+                      <!--<a href="#login-modal" class="btn btn-link logout" data-toggle="modal"></a> -->  
+                      <%= link_to "Logout", destroy_user_session_path, :method => 'delete', class:'btn' %>
+                      <%=link_to "Edit", edit_user_registration_path, class:'btn' %>
+                      | 
 
-                        <% else %>
-                          <a href="login.htm" class="btn btn-link login-mobile"><i class="fa fa-user"></i></a>
-                          <a href="#signup-modal" class="btn btn-link signup" data-toggle="modal">Sign Up</a>
-                          <a href="#login-modal" class="btn btn-link login" data-toggle="modal">Login</a> 
-                          <%= link_to "Sign up", "#signup-modal", "data-toggle" => "modal", :class => 'btn btn-link login'%>
-                        <% end %>
-			              	</div>
-		            	</div>
-		          	</div>
-	        	</div>  
-	      	</div>
+                      <i class="fa fa-user"></i>                Logged in as <strong><%= current_user.first_name %></strong>
+
+                    <% else %>
+                      <!--<a href="login.htm" class="btn btn-link login-mobile"><i class="fa fa-user"></i></a>-->
+                      <!--<a href="#signup-modal" class="btn btn-link signup" data-toggle="modal">Sign Up</a>-->
+                      <!--<%= link_to "Sign up", "#signup-modal", "data-toggle" => "modal", :class => 'btn btn-link login'%>-->
+                      <!--<a href="#login-modal" class="btn btn-link login" data-toggle="modal">Modal Login</a> -->
+                      <%=link_to "Sign up", new_user_registration_path, :class => 'btn btn-link login' %>
+                      <%=link_to "Login", user_login_path, :class => 'btn btn-link login' %>
+                    <% end %>
+              	 </div>
+          	   </div>
+          	</div>
+	        </div>  
+	     </div>
       
       <!--Header search region - hidden by default -->
       
@@ -113,341 +113,106 @@
           <div class="navbar-collapse collapse">
             <!--main navigation-->
             <ul class="nav navbar-nav">
-              <li class="home-link">
-                <a href="/"><i class="fa fa-home"></i><span class="hidden">Home</span></a>
-              </li>
-              
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" id="pages-drop" data-toggle="dropdown" data-hover="dropdown">Pages +</a> 
-                <!-- Menu -->
-                <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="pages-drop">
-                  <li class="dropdown dropdown-submenu">
-                    <a href="about.htm" class="dropdown-toggle" id="about-drop" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">About</a> 
-                    <!-- Dropdown Menu -->
-                    <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="about-drop">
-                      <li role="presentation">
-                        <a role="menuitem" href="about.htm" tabindex="-1" class="menu-item">About Us Basic <i class="new-tag">Updated!</i></a>
-                      </li>
-                      <li role="presentation">
-                        <a role="menuitem" href="about-extended.htm" tabindex="-1" class="menu-item">About Us Extended <i class="new-tag">New!</i></a>
-                      </li>
-                      <li role="presentation">
-                        <a role="menuitem" href="about-me.htm" tabindex="-1" class="menu-item">About Me <i class="new-tag">New!</i></a>
-                      </li>
-                      <li role="presentation">
-                        <a role="menuitem" href="team.htm" tabindex="-1" class="menu-item">Team List <i class="new-tag">Updated!</i></a>
-                      </li>
-                      <li role="presentation">
-                        <a role="menuitem" href="team-grid.htm" tabindex="-1" class="menu-item">Team Grid <i class="new-tag">New!</i></a>
-                      </li>
-                      <li role="presentation">
-                        <a role="menuitem" href="team-member.htm" tabindex="-1" class="menu-item">Team Member <i class="new-tag">New!</i></a>
-                      </li>
-                      <li role="presentation"><a role="menuitem" href="contact.htm" tabindex="-1" class="menu-item">Contact</a></li>
-                    </ul>
-                  </li>
+              <% if user_signed_in? %>
 
-                  <li class="dropdown dropdown-submenu">
-                    <a href="timeline.htm" class="dropdown-toggle" id="timeline-drop" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Start</a> 
-                    <!-- timelines -->
-                    <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="timeline-drop">
-                      <li role="presentation"><a role="menuitem" href="timeline-left.htm" tabindex="-1" class="menu-item">Default Experiments</a></li>
-                      <li role="presentation"><a role="menuitem" href="timeline-left.htm" tabindex="-1" class="menu-item">Advanced Experiments</a></li>
-                      <li role="presentation"><a role="menuitem" href="timeline-right.htm" tabindex="-1" class="menu-item">Group Experiments</a></li>
-                      <li role="presentation"><%= link_to "Demo R command", demo_index_path %></li>                    
-                    </ul>
-                  </li>
-                  <li><a href="features.htm" class="menu-item">Features/Services</a></li>
-                </ul>
-              </li>
-              
-              <li class="dropdown">
-                <a href="blog.htm" class="dropdown-toggle" id="blog-drop" data-toggle="dropdown" data-hover="dropdown">Blog +</a> 
-                <!-- Dropdown Menu -->
-                <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="blog-drop">
-                  <li role="presentation">
-                    <a role="menuitem" href="blog.htm" tabindex="-1" class="menu-item">Blog List Right Sidebar <i class="new-tag">Updated!</i></a>
-                  </li>
-                  <li role="presentation">
-                    <a role="menuitem" href="blog-leftbar.htm" tabindex="-1" class="menu-item">Blog List Left Sidebar <i class="new-tag">Updated!</i></a>
-                  </li>
-                  <li role="presentation">
-                    <a role="menuitem" href="blog-timeline.htm" tabindex="-1" class="menu-item">Blog List Timeline <i class="new-tag">New!</i></a>
-                  </li>
-                  <li role="presentation">
-                    <a role="menuitem" href="blog-grid.htm" tabindex="-1" class="menu-item">Blog List Grid <i class="new-tag">New!</i></a>
-                  </li>
-                  <li role="presentation">
-                    <a role="menuitem" href="blog-post.htm" tabindex="-1" class="menu-item">Blog Post <i class="new-tag">Updated!</i></a>
-                  </li>
-                  <li role="presentation">
-                    <a role="menuitem" href="blog-post-video.htm" tabindex="-1" class="menu-item">Blog Post With Video <i class="new-tag">New!</i></a>
-                  </li>
-                  <li role="presentation">
-                    <a role="menuitem" href="blog-post-slideshow.htm" tabindex="-1" class="menu-item">Blog Post With Slideshow <i class="new-tag">New!</i></a>
-                  </li>
-                  <li role="presentation">
-                    <a role="menuitem" href="blog-post-audio.htm" tabindex="-1" class="menu-item">Blog Post With Audio Clip <i class="new-tag">New!</i></a>
-                  </li>
-                </ul>
-              </li>
-              
+              <% else %>
+
+              <% end %>   
             </ul>
           </div>
           <!--/.navbar-collapse -->
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- ======== @Region: #highlighted ======== -->
+  <!-- ======== @Region: #highlighted ======== -->
 
 
-<!-- ======== @Region: #content ======== -->
-  
-	<%= yield %>
+  <!-- ======== @Region: #content ======== -->
 
-<!-- ======== @Region: #content-below ======== -->
 
-<!-- FOOTER -->
+  <%= yield %>
 
-<!-- ======== @Region: #footer ======== -->
-<footer id="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3 col">
-        <div class="block contact-block">
-          <!--@todo: replace with company contact details-->
-          <h3>
-            Contact Us
-          </h3>
-          <address>
-            <ul class="fa-ul">
-              <li>
-                <abbr title="Phone"><i class="fa fa-li fa-phone"></i></abbr>
-                0(41) 3361 4906
-              </li>
-              <li>
-                <abbr title="Email"><i class="fa fa-li fa-envelope"></i></abbr>
-                bioinfo@ufpr.br
-              </li>
-              <li>
-                <abbr title="Address"><i class="fa fa-li fa-home"></i></abbr>
-                Rua Dr. Alcides Vieira Arcoverde, 1225 - Jardim das Américas
-				CEP: 81520-260 - Curitiba - PR
-              </li>
-            </ul>
-          </address>
+  <!-- ======== @Region: #content-below ======== -->
+
+  <!-- FOOTER -->
+
+  <!-- ======== @Region: #footer ======== -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col">
+          <div class="block contact-block">
+            <!--@todo: replace with company contact details-->
+            <h3>
+              Contact Us
+            </h3>
+            <address>
+              <ul class="fa-ul">
+                <li>
+                  <abbr title="Phone"><i class="fa fa-li fa-phone"></i></abbr>
+                  0(41) 3361 4906
+                </li>
+                <li>
+                  <abbr title="Email"><i class="fa fa-li fa-envelope"></i></abbr>
+                  bioinfo@ufpr.br
+                </li>
+                <li>
+                  <abbr title="Address"><i class="fa fa-li fa-home"></i></abbr>
+                  Rua Dr. Alcides Vieira Arcoverde, 1225 - Jardim das Américas
+  				CEP: 81520-260 - Curitiba - PR
+                </li>
+              </ul>
+            </address>
+          </div>
+        </div>
+        
+        <div class="col-md-5 col">
+          <div class="block">
+            <h3>
+              About
+            </h3>
+            <p>Perform analysis of RNA-Seq with maximum performance and accuracy.!</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col">
+          <div class="block newsletter">
+            <h3>
+              Newsletter
+            </h3>
+            <p>Stay up to date with our latest news and product releases by signing up to our newsletter.</p>
+            <!--@todo: replace with mailchimp code-->
+            <form role="form">
+              <div class="input-group input-group-sm">
+                <label class="sr-only" for="email-field">Email</label>
+                <input type="text" class="form-control" id="email-field" placeholder="Email">
+                <span class="input-group-btn">
+                  <button class="btn btn-primary" type="button">Go!</button>
+                </span>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
       
-      <div class="col-md-5 col">
-        <div class="block">
-          <h3>
-            About
-          </h3>
-          <p>Perform analysis of RNA-Seq with maximum performance and accuracy.!</p>
+      <div class="row">
+        <div id="toplink">
+          <a href="#top" class="top-link" title="Back to top">Back To Top <i class="fa fa-chevron-up"></i></a>
         </div>
-      </div>
-      
-      <div class="col-md-4 col">
-        <div class="block newsletter">
-          <h3>
-            Newsletter
-          </h3>
-          <p>Stay up to date with our latest news and product releases by signing up to our newsletter.</p>
-          <!--@todo: replace with mailchimp code-->
-          <form role="form">
-            <div class="input-group input-group-sm">
-              <label class="sr-only" for="email-field">Email</label>
-              <input type="text" class="form-control" id="email-field" placeholder="Email">
-              <span class="input-group-btn">
-                <button class="btn btn-primary" type="button">Go!</button>
-              </span>
-            </div>
-          </form>
+        <!--@todo: replace with company copyright details-->
+        <div class="subfooter">
+          <div class="col-md-6">
+            <p><a href="appstraptheme.com">3R - UFPR</a> | Copyright 2014 &copy; BioInformatics-UFPR</p>
+          </div>
+          <div class="col-md-6">
+
+          </div>
         </div>
       </div>
     </div>
-    
-    <div class="row">
-      <div id="toplink">
-        <a href="#top" class="top-link" title="Back to top">Back To Top <i class="fa fa-chevron-up"></i></a>
-      </div>
-      <!--@todo: replace with company copyright details-->
-      <div class="subfooter">
-        <div class="col-md-6">
-          <p><a href="appstraptheme.com">3R - UFPR</a> | Copyright 2014 &copy; BioInformatics-UFPR</p>
-        </div>
-        <div class="col-md-6">
-
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!--Hidden elements - excluded from jPanel Menu on mobile-->
-<div class="hidden-elements jpanel-menu-exclude">
-  <!--@modal - signup modal-->
-  <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title">
-            Sign Up
-          </h4>
-        </div>
-        <div class="modal-body">
- 
-           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-              <h5>
-                Account Information
-              </h5>
-
-              <div class="form-group"><%= notice %></div>
-              <div class="form-group"><%= alert %></div>
-
-              <div class="form-group">
-                <%= f.label :First_Name, class: "control-label" %>
-                <%= f.text_field :first_name, class: "form-control",autofocus: true %>
-              </div>
-
-              <div class="form-group">
-                <%= f.label :email, class: "control-label" %>
-                <%= f.text_field :email, class: "form-control" %>
-              </div>
-
-              <div class="form-group">
-                <%= f.label :password, class: "control-label" %>
-                <%= f.password_field :password, class: "form-control",autocomplete: "off" %>
-              </div>
-
-              <div class="form-group">
-                <%= f.label :password_confirmation, class: "control-label" %>
-                <%= f.password_field :password_confirmation, class: "form-control",autocomplete: "off" %>
-              </div>
-
-              <div class="form-group">
-                <%= f.submit "Sign up", class: "btn btn-primary" %>
-              </div>
-
-              <div class="modal-footer">
-                <%= render "devise/shared/links" %>
-              </div>
-            <% end %>
-
-
-<!--
-          <form action="signup.htm" role="form">
-            <div class="form-group">
-              <label class="sr-only" for="signup-first-name">First Name</label>
-              <input type="text" class="form-control" id="signup-first-name" placeholder="First name">
-            </div>
-            <div class="form-group">
-              <label class="sr-only" for="signup-last-name">Last Name</label>
-              <input type="text" class="form-control" id="signup-last-name" placeholder="Last name">
-            </div>
-            <div class="form-group">
-              <label class="sr-only" for="signup-username">Userame</label>
-              <input type="text" class="form-control" id="signup-username" placeholder="Username">
-            </div>
-            <div class="form-group">
-              <label class="sr-only" for="signup-email">Email address</label>
-              <input type="email" class="form-control" id="signup-email" placeholder="Email address">
-            </div>
-            <div class="form-group">
-              <label class="sr-only" for="signup-password">Password</label>
-              <input type="password" class="form-control" id="signup-password" placeholder="Password">
-            </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" value="term">
-                I agree with the Terms and Conditions. 
-              </label>
-            </div>
-            <button class="btn btn-primary" type="submit">Sign up</button>
-          </form>
--->
-
-        </div>
-        <div class="modal-footer">
-          <small>Already signed up? <a href="login.htm">Login here</a>.</small>
-        </div>
-      </div>
-      <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-  </div>
-  <!-- /.modal -->
-  
-  <!--@modal - login modal-->
-  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title">
-            Login
-          </h4>
-        </div>
-        <div class="modal-body">
-
-          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
-            <div class="form-group"><%= notice %></div>
-            <div class="form-group"><%= alert %></div>
-            
-            <div class="form-group">
-              <%= f.label :email, class: "control-label" %>
-              <%= f.email_field :email, class: "form-control",autofocus: true %>
-            </div>
-            
-            <div class="form-group">
-              <%= f.label :password, class: "control-label" %>
-              <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-            </div>
-
-            <div class="form-group">
-              <%= f.submit "Log in", class: "btn btn-primary" %>
-            </div>
-
-            <div class="modal-footer">
-              <small>
-                <%= render "devise/shared/links" %>
-                <a href="#">Forgotten password?</a>
-              </small>
-            </div>
-          <% end %>
-        </div>
-<!--
-          <form action="login.htm" role="form">
-            <div class="form-group">
-              <label class="sr-only" for="login-email">Email</label>
-              <input type="email" id="login-email" class="form-control email" placeholder="Email">
-            </div>
-            <div class="form-group">
-              <label class="sr-only" for="login-password">Password</label>
-              <input type="password" id="login-password" class="form-control password" placeholder="Password">
-            </div>
-            <button type="button" class="btn btn-primary">Login</button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <small>Not a member? <a href="#" class="signup">Sign up now!</a></small>
-          <br />
-          <small><a href="#">Forgotten password?</a></small>
-        </div>
-      </div>
--->      
-      <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-  </div>
-  <!-- /.modal -->
-</div> 
-
+  </footer>
 </body>
 </html>

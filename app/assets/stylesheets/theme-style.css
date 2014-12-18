@@ -6939,8 +6939,8 @@ ul.list-border-spacer li:hover {
 }
 .header-upper .user-menu .btn-group {
   border-left: 1px solid #f4f4f4;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .header-upper .user-menu .btn-group:first-child {
   border-left: none;

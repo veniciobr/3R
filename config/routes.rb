@@ -1,6 +1,12 @@
 Rnarrails::Application.routes.draw do
 
-  devise_for :users
+  resources :projects
+
+  get "user/login"
+  
+#  devise_for :users
+  devise_for :users #, :controllers => {:registrations => "registrations"}
+
   get "home/index"
   get "demo/index"
   get "users/login"
@@ -8,13 +14,20 @@ Rnarrails::Application.routes.draw do
   #get "home/demo", to: 'demo#show_image'
   #match '/:controller/:action', :via => [:get, :post]
 
-  root 'home#index' 
+  root to: 'home#index' 
 
   resources :demo do
       collection do
         get :show_image
       end
   end
+
+  devise_scope :user do
+     get "sign_in", :to => "devise/sessions#new"
+     get "sign_out", :to => "devise/sessions#destroy"
+     get "sign_up", :to => "devise/registrations#new"
+     get "edit", :to => "devise/registrations#edit"
+ end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
