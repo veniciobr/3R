@@ -1,20 +1,29 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
+before_filter :check_for_cancel, :only => [:create, :update]
+
+def check_for_cancel
+  if params[:commit] == "Cancel"
+    redirect_to @project
+  end
+end
+
   # GET /projects
   # GET /projects.json
   def index
  
     @userId = current_user.id
-
-    @projects = Project.where("OwnerUserId = " + @userId.to_s + "And Enable = 0")
+    @projects = Project.where("OwnerUserId = " + @userId.to_s + " And Enable = 0")
   
   end
 
   # GET /projects/1
   # GET /projects/1.json
   def show
-    redirect_to :root
+    redirect_to(:action => :index)
+    #redirect_to :root
+    #redirect_to @project
   end
 
   # GET /projects/new
@@ -38,7 +47,7 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       if @project.save
         #format.html { redirect_to @project, notice: 'Project was successfully created.' }
-        format.html { redirect_to :root, notice: 'Experiment was successfully created.' }
+        format.html { redirect_to @project, notice: 'Experiment was successfully created.' }
         format.json { render action: 'show', status: :created, location: @project }
       else
         format.html { render action: 'new' }
@@ -52,7 +61,7 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
-        format.html { redirect_to :root, notice: 'Experiment was successfully updated.' }
+        format.html { redirect_to @project, notice: 'Experiment was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -71,10 +80,10 @@ class ProjectsController < ApplicationController
 
       # Em vez de excluir registro somente Desabilita Project, Campo Enable=False
       if @project.update_attribute(:Enable, 1)
-        format.html { redirect_to :root }
+        format.html { redirect_to @project }
         format.json { head :no_content }
       else
-        format.html { redirect_to :root }
+        format.html { redirect_to @project }
         format.json { render json: @project.errors, status: :unprocessable_entity }
       end
     end

@@ -22,7 +22,7 @@
   <div class="form-actions">
     <div class = "col-sm-6">
       <%= f.submit "Confirm", class: "btn btn-large btn-primary" %>  
-      <a href="/"><button type="button" class="btn btn-danger">Cancel</button></a>
+      <%= link_to "Cancel", :back, {:class=>"btn btn-danger"} %>
     </div>
   </div>
 <% end %>
