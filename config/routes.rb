@@ -1,5 +1,6 @@
 Rnarrails::Application.routes.draw do
 
+  get "dashboard/index"
   get "static_pages/help"
   resources :projects
 

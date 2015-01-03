@@ -22,7 +22,7 @@
     <![endif]-->
     
     <!-- Le fav and touch icons - @todo: fill with your icons or remove -->
-    <link rel="shortcut icon" href="images/icons/favicon.png">
+    <%= favicon_link_tag '3R.ico' %>
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/icons/114x114.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/icons/72x72.png">
     <link rel="apple-touch-icon-precomposed" href="images/icons/default.png">
@@ -62,17 +62,12 @@
                   <div class="btn-group user-menu">
                     <% if user_signed_in? %>
                       <!--<a href="#login-modal" class="btn btn-link logout" data-toggle="modal"></a> -->  
-                      <%= link_to "Logout", destroy_user_session_path, :method => 'delete', class:'btn' %>
-                      <%=link_to "Edit", edit_user_registration_path, class:'btn' %>
+                      <%= link_to "Logout", destroy_user_session_path, :method => 'delete', class:'btn btn-link login' %>
+                      <%= link_to "Edit", edit_user_registration_path, class:"btn btn-link login" %>
                       | 
-
                       <i class="fa fa-user"></i>                Logged in as <strong><%= current_user.first_name %></strong>
 
                     <% else %>
-                      <!--<a href="login.htm" class="btn btn-link login-mobile"><i class="fa fa-user"></i></a>-->
-                      <!--<a href="#signup-modal" class="btn btn-link signup" data-toggle="modal">Sign Up</a>-->
-                      <!--<%= link_to "Sign up", "#signup-modal", "data-toggle" => "modal", :class => 'btn btn-link login'%>-->
-                      <!--<a href="#login-modal" class="btn btn-link login" data-toggle="modal">Modal Login</a> -->
                       <%=link_to "Sign up", new_user_registration_path, :class => 'btn btn-link login' %>
                       <%=link_to "Login", user_login_path, :class => 'btn btn-link login' %>
                     <% end %>
@@ -90,7 +85,7 @@
           <div class="navbar">
 	            <div class="pull-left">
 	              <!--branding/logo-->
-	              <a class="navbar-brand" href="\" title="Home">
+	              <a class="navbar-brand" href="\">
 	                <h1>
 	                  <span>3</span>R<span>.</span>
 	                </h1>
@@ -107,12 +102,14 @@
 	          	-->
 
           <!-- mobile collapse menu button - data-toggle="toggle" = default BS menu - data-toggle="jpanel-menu" = jPanel Menu -->
-          <a href="#top" class="navbar-btn" data-toggle="jpanel-menu" data-target=".navbar-collapse" data-direction="right"><i class="fa fa-bars"></i></a>
           
           <!--everything within this div is collapsed on mobile-->
-          <div class="navbar-collapse collapse">
+          <div class="navbar-collapse collapse pull-left">
             <!--main navigation-->
             <ul class="nav navbar-nav">
+              <li class="home-link">
+                <a href="/"><i class="fa fa-home"></i><span class="hidden">Home</span></a>
+              </li>
               <% if user_signed_in? %>
 
               <% else %>

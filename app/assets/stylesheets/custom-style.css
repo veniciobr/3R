@@ -37,17 +37,6 @@
   padding: 10px;
 }
 
-.panel-heading.contains-buttons {
-    .clearfix;
-    .panel-title {
-        .pull-left;
-        padding-top:5px;
-    }
-    .btn {
-        .pull-right;
-    }
-}
-
 .center {
      float: none;
      margin-left: auto;
