@@ -11,54 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141217171642) do
+ActiveRecord::Schema.define(version: 20150106160929) do
 
-  create_table "experiments", force: true do |t|
-    t.string   "name",                                  null: false
-    t.string   "datail",                                null: false
-    t.string   "enable",        limit: 1, default: "S", null: false
-    t.string   "pro_public",    limit: 1, default: "N", null: false
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
-    t.integer  "groups_Id",                             null: false
-    t.integer  "owner_user_id",                         null: false
-  end
-
-  add_index "experiments", ["groups_Id"], name: "fk_projects_groups1_idx", using: :btree
-  add_index "experiments", ["name"], name: "pro_name", unique: true, using: :btree
-  add_index "experiments", ["owner_user_id"], name: "fk_projects_users1_idx", using: :btree
-
-  create_table "groups", force: true do |t|
-    t.string   "grp_Name",   limit: 45, null: false
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-  end
-
-  create_table "groups_has_users", id: false, force: true do |t|
-    t.integer "groups_id", null: false
-    t.integer "users_id",  null: false
-  end
-
-  add_index "groups_has_users", ["groups_id"], name: "fk_groups_has_users_groups1_idx", using: :btree
-  add_index "groups_has_users", ["users_id"], name: "fk_groups_has_users_users1_idx", using: :btree
-
-  create_table "models", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
+  create_table "documents", force: true do |t|
+    t.string   "file"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "project_Id"
   end
 
-  add_index "models", ["email"], name: "index_models_on_email", unique: true, using: :btree
-  add_index "models", ["reset_password_token"], name: "index_models_on_reset_password_token", unique: true, using: :btree
+  create_table "downloads", force: true do |t|
+    t.string   "title"
+    t.string   "attachement"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "projectId"
+  end
 
   create_table "projects", force: true do |t|
     t.string   "title"

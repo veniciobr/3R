@@ -1,9 +1,15 @@
-Rnarrails::Application.routes.draw do
+ Rnarrails::Application.routes.draw do
+
+  resources :projects
+  resources :documents
+
+  get "document/index"
+  get "document/new"
+  get "document/create"
 
   get "dashboard/index"
   get "static_pages/help"
-  resources :projects
-
+  
   get "user/login"
   
 #  devise_for :users
@@ -13,7 +19,8 @@ Rnarrails::Application.routes.draw do
   get "demo/index"
   get "users/login"
 
-  #get "home/demo", to: 'demo#show_image'
+  get "download", to: 'download#index'
+  
   #match '/:controller/:action', :via => [:get, :post]
 
   root to: 'home#index' 

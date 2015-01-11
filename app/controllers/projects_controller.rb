@@ -1,13 +1,13 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_filter :check_for_cancel, :only => [:create, :update]
 
-before_filter :check_for_cancel, :only => [:create, :update]
 
-def check_for_cancel
-  if params[:commit] == "Cancel"
-    redirect_to @project
+  def check_for_cancel
+    if params[:commit] == "Cancel"
+      redirect_to @project
+    end
   end
-end
 
   # GET /projects
   # GET /projects.json
