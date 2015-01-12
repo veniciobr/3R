@@ -1,27 +1,31 @@
 <%= form_for(@project) do |f| %>
 
 
-<% if not @messages_rendered -%>
-  <% if flash[:error] -%>
-    <p class='error'><%=h flash[:error] %></p>
+  <% if not @messages_rendered -%>
+    <% if flash[:error] -%>
+      <p class='error'><%=h flash[:error] %></p>
+    <% end -%>
+    <% if flash[:notice] -%>
+      <p class='notice'><%=h flash[:notice] %></p>
+    <% end -%>
   <% end -%>
-  <% if flash[:notice] -%>
-    <p class='notice'><%=h flash[:notice] %></p>
-  <% end -%>
-<% end -%>
-<% @messages_rendered = true -%>
-<% flash.clear %>
+  <% @messages_rendered = true -%>
+  <% flash.clear %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title, :placeholder => "Analysis Title", :tabindex => 1, :required => true, class:"form-control" %>
+  <div class="row">
+    <div class="col-xs-12 form-group">
+      <%= f.label :title %><br>
+      <%= f.text_field :title, :placeholder => "Analysis Title", :tabindex => 1, :required => true, class:"form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :details %><br>
-    <%= f.text_area :details,:placeholder => "Analysis Details", :tabindex => 2, :required => true, class:"form-control" %>
+  <div class="row">
+    <div class="col-xs-12 form-group">
+      <%= f.label :details %><br>
+      <%= f.text_area :details,:placeholder => "Analysis Details", :tabindex => 2, :required => true, class:"form-control" %>
+    </div>
   </div>
-  <div class="form-actions">
-    <div class = "col-sm-6">
+  <div class="row">
+    <div class="col-xs-12 form-group">
       <%= f.submit "Confirm", class: "btn btn-large btn-primary" %>  
       <%= link_to "Cancel", :back, {:class=>"btn btn-danger"} %>
     </div>
