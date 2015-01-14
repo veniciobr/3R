@@ -12,7 +12,7 @@ gem 'jquery-rails'
 gem 'carrierwave'
 gem 'jquery-fileupload-rails'
 
-
+gem 'bootstrap_form'
 
 
 gem 'rsruby'

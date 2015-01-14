@@ -39,10 +39,13 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
 
+
     @project = Project.new(project_params)
-    
+  
     @project.OwnerUserId = current_user.id
     @project.Enable = "True"
+
+#logger.debug "************** Person attributes hash: #{@project.encrypted_id}"
 
     respond_to do |format|
       if @project.save
@@ -91,14 +94,15 @@ class ProjectsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_project
-      @project = Project.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_project
+    @project = Project.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def project_params
-      params.require(:project).permit(:title, :details, :OwnerUserId, :Enable)
-    end
-    
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def project_params
+    params.require(:project).permit(:encrypted_id, :title, :details, :OwnerUserId, :Enable)
+  end
+
+
 end

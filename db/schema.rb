@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150112175906) do
+ActiveRecord::Schema.define(version: 20150114182422) do
 
   create_table "documents", force: true do |t|
     t.string   "file"
@@ -21,12 +21,21 @@ ActiveRecord::Schema.define(version: 20150112175906) do
   end
 
   create_table "pipe_steps", force: true do |t|
-    t.integer  "pipline_id"
+    t.integer  "pipeline_id"
     t.string   "stepName"
     t.string   "libraryName"
     t.string   "parameters"
-    t.datetime "created_at"
+    t.string   "lib1"
+    t.string   "param1"
+    t.string   "lib2"
+    t.string   "param2"
+    t.string   "lib3"
+    t.string   "param3"
+    t.string   "lib4"
+    t.string   "param4"
     t.datetime "updated_at"
+    t.datetime "created_at"
+    t.integer  "paired"
   end
 
   create_table "pipelines", force: true do |t|
@@ -39,6 +48,7 @@ ActiveRecord::Schema.define(version: 20150112175906) do
   end
 
   create_table "projects", force: true do |t|
+    t.integer  "encrypted_id"
     t.string   "title"
     t.string   "details"
     t.datetime "created_at"
