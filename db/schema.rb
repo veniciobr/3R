@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150114182422) do
+ActiveRecord::Schema.define(version: 20150114200624) do
 
   create_table "documents", force: true do |t|
     t.string   "file"
@@ -55,6 +55,8 @@ ActiveRecord::Schema.define(version: 20150114182422) do
     t.datetime "updated_at"
     t.integer  "OwnerUserId"
     t.boolean  "Enable"
+    t.string   "controlfile1"
+    t.string   "controlfile2"
   end
 
   create_table "users", force: true do |t|

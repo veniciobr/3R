@@ -42,6 +42,7 @@ class ProjectsController < ApplicationController
 
     @project = Project.new(project_params)
   
+    @project.controlfile1 = params[:controlfile1]
     @project.OwnerUserId = current_user.id
     @project.Enable = "True"
 
@@ -101,7 +102,7 @@ class ProjectsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def project_params
-    params.require(:project).permit(:encrypted_id, :title, :details, :OwnerUserId, :Enable)
+    params.require(:project).permit(:encrypted_id, :controlfile1, :controlfile2, :title, :details, :OwnerUserId, :Enable)
   end
 
 

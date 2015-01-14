@@ -26,6 +26,21 @@
   </div>
   <div class="row">
     <div class="col-xs-12 form-group">
+      <%= image_tag(@project.controlfile1_url) if @project.controlfile1? %>
+      <%= f.label :File_Control_1 %><br>
+      <%= f.file_field :controlfile1, :tabindex => 3, class:"form-control" %>
+      <%= f.hidden_field :controlfile1_cache %>
+    </div>
+  </div>
+   <div class="row">
+    <div class="col-xs-12 form-group">
+      <%= f.label :File_Control_2 %><br>
+      <%= f.file_field :controlfile2, :tabindex => 4, class:"form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 form-group">
       <%= f.submit "Confirm", class: "btn btn-large btn-primary" %>  
       <%= link_to "Cancel", :back, {:class=>"btn btn-danger"} %>
     </div>
