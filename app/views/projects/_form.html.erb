@@ -34,8 +34,10 @@
   </div>
    <div class="row">
     <div class="col-xs-12 form-group">
+      <%= image_tag(@project.controlfile2_url) if @project.controlfile2? %>
       <%= f.label :File_Control_2 %><br>
       <%= f.file_field :controlfile2, :tabindex => 4, class:"form-control" %>
+      <%= f.hidden_field :controlfile2_cache %>      
     </div>
   </div>
 

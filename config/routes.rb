@@ -1,9 +1,7 @@
  Rnarrails::Application.routes.draw do
 
-  resources :pipe_steps
-
+  resources :pipesteps
   resources :pipelines
-
   resources :projects
   resources :documents
 

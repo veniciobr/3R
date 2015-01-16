@@ -42,7 +42,8 @@ class ProjectsController < ApplicationController
 
     @project = Project.new(project_params)
   
-    @project.controlfile1 = params[:controlfile1]
+    #@project.controlfile1 = params[:controlfile1]
+
     @project.OwnerUserId = current_user.id
     @project.Enable = "True"
 

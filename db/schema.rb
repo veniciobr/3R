@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150114200624) do
+ActiveRecord::Schema.define(version: 20150116142213) do
 
   create_table "documents", force: true do |t|
     t.string   "file"
@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(version: 20150114200624) do
     t.datetime "updated_at"
     t.datetime "created_at"
     t.integer  "paired"
+    t.string   "ctrlfile1"
+    t.string   "ctrlfile2"
+    t.integer  "trim_minQuality"
+    t.integer  "trim_firstBase"
+    t.integer  "trim_minLength"
+    t.string   "trim_library"
+    t.string   "trim_function"
+    t.string   "trim_param"
   end
 
   create_table "pipelines", force: true do |t|
@@ -57,6 +65,8 @@ ActiveRecord::Schema.define(version: 20150114200624) do
     t.boolean  "Enable"
     t.string   "controlfile1"
     t.string   "controlfile2"
+    t.string   "ctrlfile1"
+    t.string   "ctrlfile2"
   end
 
   create_table "users", force: true do |t|
