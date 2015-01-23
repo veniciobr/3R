@@ -1,8 +1,9 @@
  Rnarrails::Application.routes.draw do
 
-  resources :pipesteps
+  resources :analyses
   resources :pipelines
-  resources :projects
+  resources :pipesteps
+
   resources :documents
 
   get "document/index"

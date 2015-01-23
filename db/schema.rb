@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150116142213) do
+ActiveRecord::Schema.define(version: 20150121093619) do
+
+  create_table "analyses", force: true do |t|
+    t.integer  "encrypted_id"
+    t.string   "title"
+    t.string   "details"
+    t.integer  "user_id"
+    t.boolean  "enable"
+    t.string   "controlfile1"
+    t.string   "controlfile2"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "documents", force: true do |t|
     t.string   "file"
@@ -20,7 +32,16 @@ ActiveRecord::Schema.define(version: 20150116142213) do
     t.integer  "project_Id"
   end
 
-  create_table "pipe_steps", force: true do |t|
+  create_table "pipelines", force: true do |t|
+    t.integer  "analysis_id"
+    t.string   "name"
+    t.text     "comments"
+    t.integer  "default",     default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pipesteps", force: true do |t|
     t.integer  "pipeline_id"
     t.string   "stepName"
     t.string   "libraryName"
@@ -44,15 +65,6 @@ ActiveRecord::Schema.define(version: 20150116142213) do
     t.string   "trim_library"
     t.string   "trim_function"
     t.string   "trim_param"
-  end
-
-  create_table "pipelines", force: true do |t|
-    t.integer  "Analysis_Id"
-    t.string   "name"
-    t.text     "comments"
-    t.integer  "default",     default: 0
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "projects", force: true do |t|
