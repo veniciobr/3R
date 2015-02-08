@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   
+
   # User autentication
   # before_action :authenticate_user!
 

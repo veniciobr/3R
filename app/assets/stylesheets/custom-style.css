@@ -30,6 +30,13 @@
  * 1. General Elements
  *--------------------------------------------------
  */
+
+#loading-indicator {
+   left: 10px;
+   top: 10px;
+ }
+
+ 
 /* Formulario de Projetos */
 #projects_form {
   /* 5. Footer wrapper */  

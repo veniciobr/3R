@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150121093619) do
+ActiveRecord::Schema.define(version: 20150207115702) do
 
   create_table "analyses", force: true do |t|
     t.integer  "encrypted_id"
@@ -36,9 +36,11 @@ ActiveRecord::Schema.define(version: 20150121093619) do
     t.integer  "analysis_id"
     t.string   "name"
     t.text     "comments"
-    t.integer  "default",     default: 0
+    t.integer  "default",      default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "controlfile1"
+    t.string   "controlfile2"
   end
 
   create_table "pipesteps", force: true do |t|

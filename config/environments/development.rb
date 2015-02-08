@@ -27,7 +27,11 @@ Rnarrails::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-    config.serve_static_assets  = true
+  #config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+    
+  config.serve_static_assets  = true
+
+  #config.log_level = :debug, :info, :warn, :error, :fatal, :unknown
+
 
 end

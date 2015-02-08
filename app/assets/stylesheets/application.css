@@ -15,7 +15,7 @@
  */
  @import "jquery.fileupload-ui";
 
- .row-centered {
+.row-centered {
     text-align:center;
 }
  
@@ -26,4 +26,12 @@
 	border-radius:3px;
 	background-clip:padding-box;
 	border:1px solid #e7ebee;
+}
+
+.button_to {
+  display: inline;
+}
+
+.button_to div {
+  display: inline;
 }

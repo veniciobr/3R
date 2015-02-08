@@ -1,41 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
     <title>3R by UFPR</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- @todo: fill with your company info or remove -->
     <meta name="description" content="">
     <meta name="author" content="veniciobr@gmail.com">
-    
-   
-    <!--Your custom colour override-->
-    <link href="#" id="colour-scheme" rel="stylesheet">
-        
-    <!-- HTML5 shiv & respond.js for IE6-8 support of HTML5 elements & media queries -->
-    <!--[if lt IE 9]>
-    <script src="plugins/html5shiv/dist/html5shiv.js"></script>
-    <script src="plugins/respond/respond.min.js"></script>
-    <![endif]-->
-    
+
     <!-- Le fav and touch icons - @todo: fill with your icons or remove -->
     <%= favicon_link_tag '3R.ico' %>
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/icons/114x114.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/icons/72x72.png">
-    <link rel="apple-touch-icon-precomposed" href="images/icons/default.png">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Rambla' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css'>
   	
   	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   	<%= csrf_meta_tags %>   
 </head>
   <!-- ======== @Region: body ======== -->
-<body class="page page-index">
+<body class="page page-index" data-no-turbolink>
 
   <!-- ======== @Region: #navigation ======== -->
   <div id="navigation" class="wrapper">
@@ -104,7 +84,7 @@
           <!-- mobile collapse menu button - data-toggle="toggle" = default BS menu - data-toggle="jpanel-menu" = jPanel Menu -->
           
           <!--everything within this div is collapsed on mobile-->
-          <div class="navbar-collapse collapse pull-left">
+          <div class="pull-left">
             <!--main navigation-->
             <ul class="nav navbar-nav">
               <li class="home-link">
