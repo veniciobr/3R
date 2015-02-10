@@ -29,6 +29,13 @@ module ApplicationHelper
 	    }
 	    messages.html_safe
 	end
+
+	def setPath(id,subdir)
+
+		path="/home/bioall/3R/rnarrails/Analysis/#{id}/#{subdir}/"
+		
+	end
+
 	#def resource_name
 	#  :user
 	#end

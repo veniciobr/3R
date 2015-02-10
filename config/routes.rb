@@ -6,7 +6,10 @@
   get "result/expression"
   get "result/showquality"
   get "result/index"
-  get "result/showqualPlot"
+  get "result/show_qualPlot"
+  get "result/showqualPlotDetails" 
+  get "result/show_basePlot"
+  get "result/show_baseCGPlot"
 
   resources :analyses
   resources :pipelines
