@@ -1,4 +1,5 @@
 module ApplicationHelper
+
 	# set R_HOME if not set
   	if ENV['R_HOME'].nil?
     	ENV['R_HOME'] = "/usr/lib/R"
@@ -30,21 +31,4 @@ module ApplicationHelper
 	    messages.html_safe
 	end
 
-	def setPath(id,subdir)
-
-		path="/home/bioall/3R/rnarrails/Analysis/#{id}/#{subdir}/"
-		
-	end
-
-	#def resource_name
-	#  :user
-	#end
-
-	#def resource
-	#  @resource ||= User.new
-	#end
-
-	#def devise_mapping
-	#  @devise_mapping ||= Devise.mappings[:user]
-	#end
 end

@@ -32,6 +32,8 @@ Rnarrails::Application.configure do
   config.serve_static_assets  = true
 
   #config.log_level = :debug, :info, :warn, :error, :fatal, :unknown
-
+  
+  config.middleware.delete Rack::Lock
+  config.reload_classes_only_on_change = false
 
 end

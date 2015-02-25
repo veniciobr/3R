@@ -11,7 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150207115702) do
+ActiveRecord::Schema.define(version: 20150224192944) do
+
+  create_table "add_alig_params", force: true do |t|
+    t.string   "aliParameters"
+    t.string   "genome"
+    t.string   "param1"
+    t.string   "param2"
+    t.integer  "pipelines_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "alignparams", force: true do |t|
+    t.string   "genome"
+    t.string   "param1"
+    t.string   "param2"
+    t.integer  "pipeline_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "paired"
+    t.string   "ctrlfile1"
+    t.string   "ctrlfile2"
+  end
 
   create_table "analyses", force: true do |t|
     t.integer  "encrypted_id"
@@ -37,10 +59,10 @@ ActiveRecord::Schema.define(version: 20150207115702) do
     t.string   "name"
     t.text     "comments"
     t.integer  "default",      default: 0
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "controlfile1"
     t.string   "controlfile2"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "pipesteps", force: true do |t|
@@ -67,20 +89,7 @@ ActiveRecord::Schema.define(version: 20150207115702) do
     t.string   "trim_library"
     t.string   "trim_function"
     t.string   "trim_param"
-  end
-
-  create_table "projects", force: true do |t|
-    t.integer  "encrypted_id"
-    t.string   "title"
-    t.string   "details"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "OwnerUserId"
-    t.boolean  "Enable"
-    t.string   "controlfile1"
-    t.string   "controlfile2"
-    t.string   "ctrlfile1"
-    t.string   "ctrlfile2"
+    t.string   "refgenome"
   end
 
   create_table "users", force: true do |t|

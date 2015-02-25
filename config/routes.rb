@@ -1,5 +1,7 @@
  Rnarrails::Application.routes.draw do
 
+  resources :alignparams
+
   get "result/quality"
   get "result/mapping"
   get "result/transcript"
@@ -7,9 +9,13 @@
   get "result/showquality"
   get "result/index"
   get "result/show_qualPlot"
-  get "result/showqualPlotDetails" 
+  get "result/trim" 
   get "result/show_basePlot"
   get "result/show_baseCGPlot"
+  get "result/show_qualPlot"
+  get "result/show_qualPlotTrimmed"
+  get "result/show_qualPlotAll"
+  get "result/show_kmerKLPlot"
 
   resources :analyses
   resources :pipelines
