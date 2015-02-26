@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150224192944) do
+ActiveRecord::Schema.define(version: 20150226000032) do
 
   create_table "add_alig_params", force: true do |t|
     t.string   "aliParameters"
@@ -28,11 +28,11 @@ ActiveRecord::Schema.define(version: 20150224192944) do
     t.string   "param1"
     t.string   "param2"
     t.integer  "pipeline_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.integer  "paired"
     t.string   "ctrlfile1"
     t.string   "ctrlfile2"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "analyses", force: true do |t|
@@ -90,6 +90,30 @@ ActiveRecord::Schema.define(version: 20150224192944) do
     t.string   "trim_function"
     t.string   "trim_param"
     t.string   "refgenome"
+  end
+
+  create_table "step_qas", force: true do |t|
+    t.integer  "pipeline_id"
+    t.integer  "minQuality"
+    t.integer  "firstBase"
+    t.integer  "minLength"
+    t.integer  "trimL"
+    t.integer  "trimR"
+    t.string   "parm1"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "step_rms", force: true do |t|
+    t.integer  "pipeline_id"
+    t.string   "genome"
+    t.integer  "paired"
+    t.string   "ctrfile1"
+    t.string   "ctrfile2"
+    t.string   "gtf_file"
+    t.string   "param1"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

@@ -1,5 +1,9 @@
  Rnarrails::Application.routes.draw do
 
+  resources :step_qas
+
+  resources :step_rms
+
   resources :alignparams
 
   get "result/quality"
