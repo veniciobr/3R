@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150226000032) do
+ActiveRecord::Schema.define(version: 20150227191452) do
 
   create_table "add_alig_params", force: true do |t|
     t.string   "aliParameters"
@@ -102,6 +102,12 @@ ActiveRecord::Schema.define(version: 20150226000032) do
     t.string   "parm1"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "truncateStartBases"
+    t.integer  "truncateEndBases"
+    t.string   "Lpattern"
+    t.string   "Rpattern"
+    t.integer  "maxLmismatch"
+    t.integer  "maxRmismatch"
   end
 
   create_table "step_rms", force: true do |t|

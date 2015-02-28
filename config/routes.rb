@@ -38,7 +38,7 @@
   get "user/login"
 
   get "pipesteps/viewquality"
-  
+
 #  devise_for :users
   devise_for :users #, :controllers => {:registrations => "registrations"}
 
