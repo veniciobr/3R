@@ -10,14 +10,17 @@
   get "result/mapping"
   get "result/transcript"
   get "result/expression"
-  get "result/showquality"
+
   get "result/index"
   get "result/show_qualPlot"
   get "result/trim" 
   get "result/show_basePlot"
   get "result/show_baseCGPlot"
-  get "result/show_qualPlot"
-  get "result/show_qualPlotTrimmed"
+  
+  get "result/show_file1"
+  get "result/show_file2"
+  get "result/show_qualy"
+  
   get "result/show_qualPlotAll"
   get "result/show_kmerKLPlot"
 
