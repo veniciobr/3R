@@ -6,7 +6,6 @@
 
   resources :alignparams
 
-  get "result/quality"
   get "result/mapping"
   get "result/transcript"
   get "result/expression"
@@ -20,9 +19,14 @@
   get "result/show_file1"
   get "result/show_file2"
   get "result/show_qualy"
-  
+  get "result/showquality"
   get "result/show_qualPlotAll"
   get "result/show_kmerKLPlot"
+  get "result/mapping"
+
+  get "result/readpdf"
+  get "result/linkfile"
+#map.readpdf "/transcript/readpdf", :controller => "transcript", :action => "readpdf"
 
   resources :analyses
   resources :pipelines
