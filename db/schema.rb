@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150227191452) do
+ActiveRecord::Schema.define(version: 20150312125419) do
 
   create_table "add_alig_params", force: true do |t|
     t.string   "aliParameters"
@@ -100,14 +100,14 @@ ActiveRecord::Schema.define(version: 20150227191452) do
     t.integer  "trimL"
     t.integer  "trimR"
     t.string   "parm1"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.integer  "truncateStartBases"
     t.integer  "truncateEndBases"
     t.string   "Lpattern"
     t.string   "Rpattern"
     t.integer  "maxLmismatch"
     t.integer  "maxRmismatch"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "step_rms", force: true do |t|
@@ -118,6 +118,20 @@ ActiveRecord::Schema.define(version: 20150227191452) do
     t.string   "ctrfile2"
     t.string   "gtf_file"
     t.string   "param1"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "step_ta", force: true do |t|
+    t.integer  "pipeline_id"
+    t.string   "gff_file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "step_trans", force: true do |t|
+    t.integer  "pipeline_id"
+    t.string   "gff_file"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

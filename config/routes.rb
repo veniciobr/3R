@@ -1,5 +1,7 @@
  Rnarrails::Application.routes.draw do
 
+  resources :step_trans
+
   resources :step_qas
 
   resources :step_rms
@@ -23,6 +25,7 @@
   get "result/show_qualPlotAll"
   get "result/show_kmerKLPlot"
   get "result/mapping"
+  post "result/readpdf"
 
   get "result/readpdf"
   get "result/linkfile"
