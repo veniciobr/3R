@@ -1,5 +1,7 @@
  Rnarrails::Application.routes.draw do
 
+  resources :targets
+
   resources :step_trans
 
   resources :step_qas
