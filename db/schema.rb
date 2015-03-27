@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150324010347) do
+ActiveRecord::Schema.define(version: 20150326153255) do
 
   create_table "add_alig_params", force: true do |t|
     t.string   "aliParameters"
@@ -138,6 +138,7 @@ ActiveRecord::Schema.define(version: 20150324010347) do
     t.string   "filetype"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "fileName"
   end
 
   create_table "users", force: true do |t|

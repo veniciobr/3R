@@ -2,19 +2,22 @@ source 'https://rubygems.org'
 
 # My devices
 gem 'mysql2'
-gem 'therubyracer'
-gem 'less-rails'
-gem 'sass-rails', '~> 4.0.2'
+
 gem 'coffee-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'twitter-bootstrap-rails'
-
 gem 'carrierwave'
-#gem 'jquery-fileupload-rails'
-gem 'jquery.fileupload-rails'
-gem 'jquery-ui-rails'
-gem 'bootstrap_form'
 
+
+gem 'therubyracer'
+gem 'execjs'
+gem 'less-rails'
+gem 'sass-rails', '~> 4.0.2'	
+gem 'jquery-fileupload-rails', git: 'git://github.com/ollnixon/jquery-fileupload-rails.git'
+gem 'jquery-ui-rails'
+
+
+gem 'bootstrap_form'
 gem 'rsruby'
 gem 'devise'
 gem 'simple_form'
